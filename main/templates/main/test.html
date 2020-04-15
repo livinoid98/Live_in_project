@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/layout.css'%}" type="text/css"/>
+    <title>Jaebin Project</title>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">
+                <h1><a href="{% url 'main' %}"><img src="../static/main/img/logo.png" alt=""/></a></h1>
+            </div>
+            <nav class="clearfix">
+                <div class="find">
+                    <img src="../static/main/img/find.png" alt=""/>
+                </div>
+                <ul class="clearfix">
+                    <li><h2><a href="{% url 'find' %}">병원 의사 찾기</a></h2></li>
+                    <li><h2><a href="#">재빈 이해하기</a></h2></li>
+                    <li><h2><a href="{% url 'food' %}">영양과 운동</a></h2></li>
+                    <li><h2><a href="{% url 'health_diary' %}">투병 일기</a></h2></li>
+                    <li><h2><a href="#">마이페이지</a></h2></li>
+                </ul>
+                <div class="time">
+                    <h2><a href="#">진료시간</a></h2>
+                </div>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="black_opacity"></div>
+            <div class="main_wrap">
+                <img src="../static/main/img/main_text.png" alt=""/>
+            </div>
+        </div>
+        <div class="info">
+            <h3><img src="../static/main/img/info_main_text.png" alt=""/></h3>
+            <div class="info_text">
+                <img src="../static/main/img/info_text.png" alt=""/>
+                <img src="../static/main/img/info_icon.png" alt=""/>
+                <span>재빈에 대한 궁금한 점 알아보기</span>
+                <img src="../static/main/img/food_icon.png" alt=""/>
+                <span>조절해야 하는 식단과 운동방법 알아보기</span>
+            </div>
+            <div class="info_img">
+                <img src="../static/main/img/health.png" alt=""/>
+            </div>
+        </div>
+        <div class="my_page">
+            <div class="wrap">
+                <img src="../static/main/img/my_page_text.png" alt=""/>
+            </div>
+        </div>
+        <div class="diary">
+            <h3><img src="../static/main/img/from_the_health_diary.png" alt=""/></h3>
+            <div class="diary_notice">
+                <span>이식 후 수치는 언제부터?</span>
+                <span>보통 뜨는 지 궁금하네요 오늘로 이틀 째 되었지만 궁금해서요</span>
+                <span>두번 채집 두번 이식</span>
+                <span>어제 이식 디데이였어요. 공여자 동생이 아직 개월수가 어려</span>
+                <span>전처치 끝 공여자 동생 입원</span>
+                <span>드디어 7일간의 전처치가 끝나고 오늘은 휴식타임</span>
+                <span>전처치 5일차</span>
+                <span>전처치 3일 째, 플루다라 싸이톡신 후 살짝 소변에 혈이 1개정도 보이고</span>
+                <button><a href="#">투병일기 보러가기</a></button>
+            </div>
+            <div class="diary_img">
+                <img src="../static/main/img/health2.png" alt="">
+            </div>
+        </div>
+        <footer>
+            <a href="{% url 'main' %}"><img src="../static/main/img/footer_logo.png" alt=""/></a>
+            <img src="../static/main/img/footer_text.png" alt=""/>
+        </footer>
+    </div>
+</body>
+</html>

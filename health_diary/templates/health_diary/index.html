@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'health_diary/layout.css' %}" type="text/css"/>
+    <title>Diary Page</title>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">
+                <h1><a href="{% url 'main' %}"><img src="../../static/health_diary/img/logo.png" alt=""/></a></h1>
+            </div>
+            <nav class="clearfix">
+                <div class="find">
+                    <img src="../../static/health_diary/img/find.png" alt=""/>
+                </div>
+                <ul class="clearfix">
+                    <li><h2><a href="{% url 'find' %}">병원 의사 찾기</a></h2></li>
+                    <li><h2><a href="#">재빈 이해하기</a></h2></li>
+                    <li><h2><a href="{% url 'food' %}">영양과 운동</a></h2></li>
+                    <li><h2><a href="{% url 'health_diary' %}">투병 일기</a></h2></li>
+                    <li><h2><a href="#">마이페이지</a></h2></li>
+                </ul>
+                <div class="time">
+                    <h2><a href="#">진료시간</a></h2>
+                </div>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="black"></div>
+            <div class="main_wrap">
+                <h3><img src="../../static/health_diary/img/main_text.png" alt=""/></h3>
+            </div>
+        </div>
+        <div class="diary_notice clearfix">
+            <h3>Health Diary : 투병일기</h3>
+            <form>
+                <select>
+                    <option value="title">제목</option>
+                    <option value="content">내용</option>
+                </select>
+                <input type="text" name="search" value=""/>
+                <button><a href="#">검색</a></button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <td>번호</td>
+                        <td>제목</td>
+                        <td>작성자</td>
+                        <td>작성일</td>
+                        <td>조회수</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9</td>
+                        <td>면역 치료 후 첫 외래</td>
+                        <td>갸르미</td>
+                        <td>20.04.13</td>
+                        <td>182</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>이식 +19 골수검사 퇴원이야기</td>
+                        <td>유니혀니맘</td>
+                        <td>20.04.13</td>
+                        <td>219</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>무균실 탈출...</td>
+                        <td>빼짱</td>
+                        <td>20.04.11</td>
+                        <td>214</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>이식이후 백일</td>
+                        <td>skyhyun</td>
+                        <td>20.04.10</td>
+                        <td>276</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>이식 14일째 드디어 꿈틀 간정맥폐쇄증 의심</td>
+                        <td>유니혀니맘</td>
+                        <td>20.04.08</td>
+                        <td>297</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>atg 어제부로 끝났네요.</td>
+                        <td>갸르미</td>
+                        <td>20.04.07</td>
+                        <td>193</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4월 1일 이식합니다. </td>
+                        <td>빼짱</td>
+                        <td>20.03.28</td>
+                        <td>301</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>일년만에 들어왔네요. 반일치이식 4년차</td>
+                        <td>안녕</td>
+                        <td>20.03.19</td>
+                        <td>403</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>딸아이 전처치 2일차 지났어요</td>
+                        <td>유니혀니맘</td>
+                        <td>20.03.17</td>
+                        <td>330</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button><a href="#">보기</a></button>
+            <button><a href="#">목록</a></button>
+        </div>
+        <footer>
+            <a href="{% url 'main' %}"><img src="../../static/health_diary/img/footer_logo.png" alt=""/></a>
+            <img src="../../static/health_diary/img/footer_text.png" alt=""/>
+        </footer>
+    </div>
+</body>
+</html>
