@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'mypage',
     'health_diary',
     'find',
-    'food',
 ]
 
 MIDDLEWARE = [

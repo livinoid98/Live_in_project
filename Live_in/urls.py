@@ -22,5 +22,4 @@ urlpatterns = [
     path('mypage/', include('mypage.urls')),
     path('health_diary/', include('health_diary.urls')),
     path('find/', include('find.urls')),
-    path('food/', include('food.urls')),
 ]
