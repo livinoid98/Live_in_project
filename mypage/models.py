@@ -6,7 +6,14 @@ class Diary(models.Model):
     date = models.DateField()
     title = models.CharField(max_length=20)
     content = models.TextField()
-    emotion = models.IntegerField()
+    EMOTION = [
+        (1, '😍행복해요'),
+        (2, '🙃보통이에요'),
+        (3, '😑별로에요'),
+        (4, '😭슬퍼요'),
+        (5, '😡화나요'),
+    ]
+    emotion = models.IntegerField(default=2, choices=EMOTION)
     WBC = models.IntegerField()
     RBC = models.IntegerField()
     PT = models.IntegerField()
