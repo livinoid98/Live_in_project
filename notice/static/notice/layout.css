@@ -113,7 +113,7 @@ button {
   .wrap .main {
     width: 100%;
     height: 330px;
-    background-image: url("../../static/health_diary/img/main_img.png");
+    background-image: url("../../static/notice/img/main_img.png");
     background-position: center;
     background-repeat: no-repeat;
     margin-top: -18px; }
@@ -129,107 +129,182 @@ button {
       .wrap .main .main_wrap h3 {
         margin-top: 118px;
         margin-left: 420px; }
-  .wrap .diary_notice {
+  .wrap .doctor_notice {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 60px; }
+    .wrap .doctor_notice h3, .wrap .doctor_notice .sub {
+      float: left; }
+    .wrap .doctor_notice h3 {
+      font-size: 18px;
+      font-weight: 900;
+      color: #393939;
+      margin-left: 20px;
+      letter-spacing: 2px; }
+    .wrap .doctor_notice ul li {
+      float: left;
+      font-size: 12px;
+      font-weight: 700;
+      color: #707070;
+      margin-left: 20px;
+      margin-top: 4px; }
+    .wrap .doctor_notice button {
+      width: 120px;
+      height: 34px;
+      border: 2px solid #b4b4b4;
+      background-color: #fff;
+      position: relative;
+      top: -22px;
+      margin-left: 916px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #5e5e5e;
+      cursor:pointer; }
+    .wrap .doctor_notice .column_box {
+      width: 100%; }
+      .wrap .doctor_notice .column_box .column {
+        width: 285px;
+        margin-left: 20px;
+        float: left; }
+        .wrap .doctor_notice .column_box .column:nth-child(1) {
+          margin-left: 0px; }
+        .wrap .doctor_notice .column_box .column img {
+          width: 100%;
+          cursor:pointer; }
+          .wrap .doctor_notice .column_box .column .column_text li {
+            margin-top: 16px;
+            margin-left: 0px;
+            cursor:pointer; }
+            .wrap .doctor_notice .column_box .column .column_text li:nth-child(1) {
+              font-size: 14px;
+              color: #6f6f6f;
+              margin-left: 10px; }
+            .wrap .doctor_notice .column_box .column .column_text li:nth-child(2) {
+              font-size: 10px;
+              margin-top: 22px;
+              margin-left: 10px;
+              color: #d6d6d6; }
+          .wrap .doctor_notice .column_box .column .column_text span {
+            font-size: 12px;
+            position: relative;
+            top: 6px;
+            margin-left: 16px;
+            color: #a1a1a1;
+            cursor:pointer; }
+  .wrap .food_notice {
     width: 1200px;
     margin: 0 auto;
     margin-top: 70px; }
-    .wrap .diary_notice h3 {
+    .wrap .food_notice h3 {
       font-size: 16px;
       font-weight: 900;
       color: #2cacdb;
       margin-left: 68px; }
-    .wrap .diary_notice form {
+    .wrap .food_notice form {
       float: right;
       margin-top: -21px;
-      margin-right: 50px; }
-      .wrap .diary_notice form select {
-        width: 80px;
-        height: 28px;
-        margin-right: 8px;
+      margin-right: 50px;
+      position: relative; }
+      .wrap .food_notice form input {
+        width: 300px;
+        height: 35px;
         background-color: #fff;
-        border: 1px solid #dedede; }
-      .wrap .diary_notice form input {
-        width: 200px;
-        height: 24px;
-        margin-right: 8px;
-        position: relative;
-        top: -2px;
-        background-color: #fff;
-        border: 1px solid #dedede; }
-      .wrap .diary_notice form button {
-        width: 64px;
-        height: 28px;
-        margin-top: 0px;
-        background-color: #2cacdb;
         border: 1px solid #dedede;
+        border-radius: 15px; }
+        .wrap .food_notice form input::-webkit-input-placeholder {
+          font-size: 14px;
+          font-weight: 400px;
+          color: #ccc;
+          padding-left: 18px; }
+        .wrap .food_notice form input:-ms-input-placeholder {
+          font-size: 14px;
+          font-weight: 400px;
+          color: #ccc;
+          padding-left: 18px; }
+        .wrap .food_notice form input::-ms-input-placeholder {
+          font-size: 14px;
+          font-weight: 400px;
+          color: #ccc;
+          padding-left: 18px; }
+        .wrap .food_notice form input::placeholder {
+          font-size: 14px;
+          font-weight: 400px;
+          color: #ccc;
+          padding-left: 18px; }
+      .wrap .food_notice form button {
+        width: 64px;
+        height: 35px;
+        margin-top: 0px;
+        position: absolute;
+        top: 1px;
+        left: 236px;
+        border: none;
         font-size: 14px;
         font-weight: 400;
         color: #fff;
         cursor: pointer; }
-    .wrap .diary_notice table {
+    .wrap .food_notice table {
       width: 1100px;
       margin: 0 auto;
       margin-top: 29px;
       border-top: 2px solid #2cacdb; }
-      .wrap .diary_notice table thead tr {
+      .wrap .food_notice table thead tr {
         height: 55px; }
-        .wrap .diary_notice table thead tr td {
+        .wrap .food_notice table thead tr td {
           font-size: 18px;
           font-weight: 400;
           color: #5c5e5e;
           text-align: center;
           padding: 20px 0px; }
-          .wrap .diary_notice table thead tr td:nth-child(1) {
+          .wrap .food_notice table thead tr td:nth-child(1) {
             width: 94px; }
-          .wrap .diary_notice table thead tr td:nth-child(2) {
+          .wrap .food_notice table thead tr td:nth-child(2) {
             width: 500px; }
-          .wrap .diary_notice table thead tr td:nth-child(3) {
+          .wrap .food_notice table thead tr td:nth-child(3) {
             width: 148px; }
-          .wrap .diary_notice table thead tr td:nth-child(4) {
+          .wrap .food_notice table thead tr td:nth-child(4) {
             width: 148px; }
-          .wrap .diary_notice table thead tr td:nth-child(5) {
+          .wrap .food_notice table thead tr td:nth-child(5) {
             width: 98px; }
-      .wrap .diary_notice table tbody tr {
+      .wrap .food_notice table tbody tr {
         height: 46px;
         border-top: 1px solid #edf0f3; }
-        .wrap .diary_notice table tbody tr:nth-child(1) {
+        .wrap .food_notice table tbody tr:nth-child(1) {
           border-top: 1px solid #a4dff5; }
-        .wrap .diary_notice table tbody tr td {
+        .wrap .food_notice table tbody tr td {
           font-size: 14px;
           font-weight: 400;
           color: #929292;
           text-align: center;
           padding: 20px 0px;
           cursor: pointer; }
-          .wrap .diary_notice table tbody tr td:nth-child(1) {
+          .wrap .food_notice table tbody tr td:nth-child(1) {
             width: 94px; }
-          .wrap .diary_notice table tbody tr td:nth-child(2) {
+          .wrap .food_notice table tbody tr td:nth-child(2) {
             width: 500px; }
-          .wrap .diary_notice table tbody tr td:nth-child(3) {
+          .wrap .food_notice table tbody tr td:nth-child(3) {
             width: 148px; }
-          .wrap .diary_notice table tbody tr td:nth-child(4) {
+          .wrap .food_notice table tbody tr td:nth-child(4) {
             width: 148px; }
-          .wrap .diary_notice table tbody tr td:nth-child(5) {
+          .wrap .food_notice table tbody tr td:nth-child(5) {
             width: 98px; }
-    .wrap .diary_notice button {
-      width: 80px;
-      height: 28px;
+    .wrap .food_notice button {
+      width: 100px;
+      height: 35px;
       background-color: #fff;
-      border: 1px solid #dedede;
+      border: 1px solid #6d6d6d;
+      border-radius: 15px;
       float: right;
-      margin-top: 27px;
+      margin-top: 44px;
+      margin-right: 51px;
       cursor: pointer;
       font-size: 14px;
       font-weight: 400;
       color: #777; }
-      .wrap .diary_notice button:nth-child(4) {
-        margin-right: 50px; }
-      .wrap .diary_notice button:nth-child(5) {
-        margin-right: 10px; }
   .wrap footer {
     width: 1200px;
     margin: 0 auto;
-    margin-top: 54px;
+    margin-top: 82px;
     margin-bottom: 40px; }
     .wrap footer img:nth-child(1) {
       margin-left: 66px; }
