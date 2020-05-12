@@ -24,9 +24,7 @@ class Diary(models.Model):
 
 class Calendar(models.Model):
     # User_id = models.ForeignKey('User')
-    datetime = models.DateTimeField()
-    hospital = models.CharField(max_length=20)
     content = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.content[:10]
+        return self.content
