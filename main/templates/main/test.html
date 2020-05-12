@@ -24,10 +24,10 @@
                     <li><h2><a href="{% url 'find' %}">병원 의사 찾기</a></h2></li>
                     <li><h2><a href="{% url 'notice' %}">재빈 이해하기</a></h2></li>
                     <li><h2><a href="{% url 'health_diary' %}">투병 일기</a></h2></li>
-                    <li><h2><a href="#">마이페이지</a></h2></li>
+                    <li><h2><a href="{% url 'mypage' %}">마이페이지</a></h2></li>
                 </ul>
                 <div class="time">
-                    <h2><a href="#">진료시간</a></h2>
+                    <h2><a href="{% url 'mypage' %}">진료시간</a></h2>
                 </div>
             </nav>
         </header>
@@ -54,9 +54,9 @@
             <div class="food_list_wrap">
                 <h3><img src="../static/main/img/list_title.png" alt=""/></h3>
                 <form>
-                    <input type="text" name="rbc" id="rbc" placeholder="호중구 수" numberonly="true"/>입방 밀리미터<br/>
-                    <input type="text" name="pt" id="pt" placeholder="혈소판 수" numberonly="true"/>입방 밀리미터<br/>
-                    <input type="text" name="wbc" id="wbc" placeholder="그물적혈구 수" numberonly="true"/>입방 밀리미터
+                    <label>호중구 수</label><input type="text" name="rbc" id="rbc" placeholder="200 ~ 2000 수치 입력" numberonly="true"/>입방 밀리미터<br/>
+                    <label>혈소판 수</label><input type="text" name="pt" id="pt" placeholder="10000 ~ 80000 수치 입력" numberonly="true"/>입방 밀리미터<br/>
+                    <label>그물적혈구 수</label><input type="text" name="wbc" id="wbc" placeholder="10000 ~ 100000 수치 입력" numberonly="true"/>입방 밀리미터
                 </form>
                 <button id="submit">자가진단 Start</button>
             </div>
