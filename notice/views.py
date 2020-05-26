@@ -15,7 +15,19 @@ def boardform(request, board=None):
         if form.is_valid():
             board = form.save(commit=False)
             board.pub_date = timezone.now()
-            # 여기서 로그인한 사람이 전문가이면 board.pro를 True로 설정해주기!
+            board.save()
+            return redirect('notice')
+    else:
+        form = BoardForm(instance=board)
+        return render(request, 'notice/new.html', {'form': form})
+
+def proboardform(request, board=None):
+    if request.method == 'POST':
+        form = BoardForm(request.POST, instance=board)
+        if form.is_valid():
+            board = form.save(commit=False)
+            board.pub_date = timezone.now()
+            board.pro = True
             board.save()
             return redirect('notice')
     else:
