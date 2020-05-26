@@ -46,7 +46,7 @@
                 {% for board in boards.all %}
                 {% if board.pro == True %}
                 <div class="column">
-                    <img src="../../static/notice/img/column1.jpg" alt=""/>
+                    <a href="{% url 'detail' board.id %}"><img src="../../static/notice/img/column1.jpg" alt=""/></a>
                     <div class="column_text">
                         <ul>
                             <li>{{ board.title }}</li>
@@ -55,12 +55,13 @@
                             <!-- <li>{{ board.User_id.name }}</li> -->
                         </ul>
                         <!-- 생성날짜 -->
+                        <br><br>
                         <span>{{ board.pub_date }}</span>
                     </div>
                 </div>
                 {% endif %}
                 {% endfor %}
-                
+
                 <div class="column">
                     <img src="../../static/notice/img/column2.png" alt=""/>
                     <div class="column_text">
@@ -123,7 +124,7 @@
                     </tr>
                     {% endif %}
                     {% endfor %}
-                    <!-- <tr>
+                    <tr>
                         <td>9</td>
                         <td>면역 치료 후 첫 외래</td>
                         <td>갸르미</td>
@@ -185,7 +186,7 @@
                         <td>유니혀니맘</td>
                         <td>20.03.17</td>
                         <td>330</td>
-                    </tr> -->
+                    </tr>
                 </tbody>
             </table>
             <button><a href="{% url 'new' %}">글쓰기</a></button>

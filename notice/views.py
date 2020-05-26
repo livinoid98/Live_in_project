@@ -2,8 +2,8 @@
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .forms import BoardForm
-from .models import Board
+from .forms import BoardForm, CommentForm
+from .models import Board, Comment
 
 def index(request):
     boards = Board.objects
@@ -44,5 +44,21 @@ def remove(request, pk):
     return redirect('notice')
 
 def detail(request, board_id):
-    board_detail = get_object_or_404(Board, pk=board_id)
-    return render(request, 'notice/detail.html', {'board': board_detail})
+    board = get_object_or_404(Board, pk=board_id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.Board_id = board
+            comment.content = form.cleaned_data['content']
+            comment.pub_date = timezone.now()
+            comment.save()
+            return redirect('detail', board_id)
+    else:
+        form = CommentForm()
+        return render(request, 'notice/detail.html', {'board': board, 'form': form})
+
+def remove_comment(request, comment_id):
+    comment = get_object_or_404(Comment, pk=comment_id)
+    comment.delete()
+    return redirect('detail', comment.Board_id.id)
