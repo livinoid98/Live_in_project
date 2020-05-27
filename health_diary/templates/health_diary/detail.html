@@ -16,5 +16,5 @@
 <!-- 댓글목록 -->
 {% for comment in post.comments.all %}
     {{ comment.content }}
-    <button><a href="{% url 'remove_comment' comment.pk %}">삭제</a></button>
+    <button><a href="{% url 'remove_comment_hd' comment.pk %}">삭제</a></button>
 {% endfor %}
