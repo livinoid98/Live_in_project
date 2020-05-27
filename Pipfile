@@ -10,8 +10,9 @@ pylint = "*"
 asgiref = "==3.2.7"
 pytz = "==2019.3"
 sqlparse = "==0.3.1"
-Django = "==2.2.10"
+Django = "==2.2.5"
 pillow = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.8"
