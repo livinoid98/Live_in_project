@@ -33,8 +33,8 @@
             <div class="black"></div>
             <div class="search_wrap">
                 <h3><img src="../../static/find/img/search_title.png" alt=""/></h3>
-                <form>
-                    <input type="text" name="name" value="병원 이름을 입력해주세요."/>
+                <form id="search">
+                    <input id="searchword" type="text" name="name" value="병원 이름을 입력해주세요."/>
                 </form>
                 <button>
                     <img src="../../static/find/img/search_icon.png" alt=""/>
@@ -75,7 +75,16 @@
         </div>
         <div class="hospital_contents">
             <h3><img src="../../static/find/img/search_result_title.png" alt=""/></h3>
-            <div class="hospital_info clearfix">
+            <div id= "results" class="hospital_info clearfix">
+                {% for hospital in hospitals.all %}
+                <div class="hospital_box">
+                    <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
+                    <div class="hospital_text">
+                        <span>{{ hospital.name }}</span>
+                        <p>{{ hospital.address }}</p>
+                    </div>
+                </div>
+                {% endfor %}
                 <div class="hospital_box">
                     <img src="../../static/find/img/hospital1.png" alt=""/>
                     <div class="hospital_text">
@@ -93,7 +102,7 @@
                 <div class="hospital_box">
                     <img src="../../static/find/img/hospital3.png" alt=""/>
                     <div class="hospital_text">
-                        <span>분당 제생 병원</span>
+                        <span>분당 재생 병원</span>
                         <p>13590 경기도 성남시 분당구 서현로 180번길 20(서현동 255-2)</p>
                     </div>
                 </div>

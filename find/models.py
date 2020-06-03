@@ -16,7 +16,7 @@ class Hospital(models.Model):
     site_url = models.URLField()
     address = models.CharField(max_length=200)
     tel = models.CharField(max_length=15)
-    img = models.ImageField(blank=True)
+    img = models.ImageField(blank=True, upload_to='hospital_images/')
 
     def __str__(self):
         return self.name
