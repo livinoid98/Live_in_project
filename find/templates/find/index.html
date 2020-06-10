@@ -92,13 +92,13 @@
                                 <h3>전국 재빈병원</h3>
                                 <div id= "results" class="hospital_info clearfix">
                                     {% for hospital in hospitals.all %}
-                                    <div class="hospital_box">
+                                    <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
                                         <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
                                         <div class="hospital_text">
                                             <span>{{ hospital.name }}</span>
                                             <p>{{ hospital.address }}</p>
                                         </div>
-                                    </div>
+                                    </div></a>
                                     {% endfor %}
                                 </div>
                         </div>
@@ -109,13 +109,13 @@
                                 <div id= "results" class="hospital_info clearfix">
                                     {% for hospital in hospitals.all %}
                                     {% if hospital.zone == 1 %}
-                                    <div class="hospital_box">
+                                    <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
                                         <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
                                         <div class="hospital_text">
                                             <span>{{ hospital.name }}</span>
                                             <p>{{ hospital.address }}</p>
                                         </div>
-                                    </div>
+                                    </div></a>
                                     {% endif %}
                                     {% endfor %}
                                 </div>
@@ -127,13 +127,13 @@
                             <div id= "results" class="hospital_info clearfix">
                                 {% for hospital in hospitals.all %}
                                 {% if hospital.zone == 2 %}
-                                <div class="hospital_box">
+                                <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
                                     <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
                                     <div class="hospital_text">
                                         <span>{{ hospital.name }}</span>
                                         <p>{{ hospital.address }}</p>
                                     </div>
-                                </div>
+                                </div></a>
                                 {% endif %}
                                 {% endfor %}
                             </div>
@@ -145,13 +145,13 @@
                             <div id= "results" class="hospital_info clearfix">
                                 {% for hospital in hospitals.all %}
                                 {% if hospital.zone == 3 %}
-                                <div class="hospital_box">
+                                <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
                                     <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
                                     <div class="hospital_text">
                                         <span>{{ hospital.name }}</span>
                                         <p>{{ hospital.address }}</p>
                                     </div>
-                                </div>
+                                </div></a>
                                 {% endif %}
                                 {% endfor %}
                             </div>
@@ -163,13 +163,13 @@
                             <div id= "results" class="hospital_info clearfix">
                                 {% for hospital in hospitals.all %}
                                 {% if hospital.zone == 4 %}
-                                <div class="hospital_box">
+                                <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
                                     <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
                                     <div class="hospital_text">
                                         <span>{{ hospital.name }}</span>
                                         <p>{{ hospital.address }}</p>
                                     </div>
-                                </div>
+                                </div></a>
                                 {% endif %}
                                 {% endfor %}
                             </div>
@@ -181,13 +181,13 @@
                             <div id= "results" class="hospital_info clearfix">
                                 {% for hospital in hospitals.all %}
                                 {% if hospital.zone == 5 %}
-                                <div class="hospital_box">
+                                <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
                                     <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
                                     <div class="hospital_text">
                                         <span>{{ hospital.name }}</span>
                                         <p>{{ hospital.address }}</p>
                                     </div>
-                                </div>
+                                </div></a>
                                 {% endif %}
                                 {% endfor %}
                             </div>
@@ -199,13 +199,13 @@
                             <div id= "results" class="hospital_info clearfix">
                                 {% for hospital in hospitals.all %}
                                 {% if hospital.zone == 6 %}
-                                <div class="hospital_box">
+                                <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
                                     <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
                                     <div class="hospital_text">
                                         <span>{{ hospital.name }}</span>
                                         <p>{{ hospital.address }}</p>
                                     </div>
-                                </div>
+                                </div></a>
                                 {% endif %}
                                 {% endfor %}
                             </div>

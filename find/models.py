@@ -22,7 +22,7 @@ class Hospital(models.Model):
         return self.name
 
 class Review(models.Model):
-    Hospital_id = models.ForeignKey('Hospital', on_delete=models.CASCADE)
+    Hospital_id = models.ForeignKey('Hospital', on_delete=models.CASCADE, related_name='reviews')
     SCORE = [
         (1, '★☆☆☆☆'),
         (2, '★★☆☆☆'),
