@@ -7,8 +7,9 @@ class Hospital(models.Model):
         (2,'경기,인천'),
         (3,'강원'),
         (4,'충청'),
-        (5,'경상'),
-        (6,'제주'),
+        (5,'전라'),
+        (6,'경상'),
+        (7,'제주'),
     ]
     name = models.CharField(max_length=20)
     zone = models.IntegerField(default=0, choices=ZONE_CATEGORY)

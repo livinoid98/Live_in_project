@@ -78,6 +78,9 @@
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#충청" aria-expanded="false" aria-controls="collapseExample">
                         충청
                     </button>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#전라" aria-expanded="false" aria-controls="collapseExample">
+                        전라
+                    </button>
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#경상" aria-expanded="false" aria-controls="collapseExample">
                         경상
                     </button>
@@ -175,12 +178,30 @@
                             </div>
                         </div>
                     </div>
+                    <div class="collapse" id="전라">
+                        <div class="card card-body">
+                            <h3><b>전라</b>에 있는 재빈병원</h3>
+                            <div id= "results" class="hospital_info clearfix">
+                                {% for hospital in hospitals.all %}
+                                {% if hospital.zone == 5 %}
+                                <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
+                                    <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
+                                    <div class="hospital_text">
+                                        <span>{{ hospital.name }}</span>
+                                        <p>{{ hospital.address }}</p>
+                                    </div>
+                                </div></a>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
                     <div class="collapse" id="경상">
                         <div class="card card-body">
                             <h3><b>경상</b>에 있는 재빈병원</h3>
                             <div id= "results" class="hospital_info clearfix">
                                 {% for hospital in hospitals.all %}
-                                {% if hospital.zone == 5 %}
+                                {% if hospital.zone == 6 %}
                                 <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
                                     <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
                                     <div class="hospital_text">
@@ -198,7 +219,7 @@
                             <h3><b>제주</b>에 있는 재빈병원</h3>
                             <div id= "results" class="hospital_info clearfix">
                                 {% for hospital in hospitals.all %}
-                                {% if hospital.zone == 6 %}
+                                {% if hospital.zone == 7 %}
                                 <a href="{% url 'Hospital_detail' hospital.id %}"><div class="hospital_box">
                                     <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
                                     <div class="hospital_text">
