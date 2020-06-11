@@ -28,9 +28,25 @@
   - app : main, mypage, health_diary, find
   - createsuperuser
 
-- mypage를 제외한 서브페이지 퍼블리싱 완료
+서브페이지들 퍼블리싱 완료
   - 페이지간 라우팅 작업 완료
   
 - model 테스트 구현
   - admin에서 잘 동작하는지 확인해봄
   - user, category 등 추후 수정필요
+  
+- 투병일기게시판(health_diary) CRUD 기능 구현완료
+
+- 재빈이해하기(notice) CRUD 기능 구현
+  - 전문가칼럼, 자유게시판 구분은 아직.. 회원가입/로그인 기능 구현 후 작업할
+  - 전문가 칼럼 : MEDIA_URL root directory 설정 완료
+  - 전문가 칼럼 : mark_safe 보안 이슈 해결 및 thumbnail 작성
+  - 추후 Inline Admin으로 연결
+
+- 로그인/회원가입 기능 구현중
+  - 로그인 및 회원가입 UI 구현 완료
+
+- 마이페이지
+  - 달력, 병원일정 기록 및 확인
+  - 캘린더 +more 및 ui로 수정 추가기능 적용
+  - 수치기록 (이모티콘 미적용)
