@@ -3,7 +3,10 @@ from django.http import HttpResponse
 from .models import Hospital, Review
 
 def index(request):
-    hospitals = Hospital.objects
+    hospitals = Hospital.objects.all()
+    if 'keyword' in request.GET:
+        keyword = request.GET['keyword']
+        hospitals = hospitals.filter(name__contains=keyword)
     return render(request, 'find/index.html', {'hospitals': hospitals})
 
 def detail(request, hospital_id):

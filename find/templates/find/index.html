@@ -34,33 +34,14 @@
             <div class="black"></div>
             <div class="search_wrap">
                 <h3><img src="../../static/find/img/search_title.png" alt=""/></h3>
-                <form id="search" action="">
-                    <input id="searchword" type="search" name="keyword" placeholder="병원 이름을 입력해주세요.">
+                <form id="search" action="" method="GET">
+                    <input id="searchword" type="search" name="keyword" placeholder="병원 이름을 입력해주세요." value="{{ keyword }}">
                     <button type="submit">
                         <img src="../../static/find/img/search_icon.png" alt=""/>
                         <label>search</label>
                     </button>
                 </form>
-
-                <!-- {% if searchword %}
-                <div id= "results" class="hospital_info clearfix">
-                    {% for hospital in hospitals.all %}
-                    {% if searchword in hospital.name %}
-                    <div class="hospital_box">
-                        <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
-                        <div class="hospital_text">
-                            <span>{{ hospital.name }}</span>
-                            <p>{{ hospital.address }}</p>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                {% else %}
-                <p>검색결과 없음</p>
-                {% endif %} -->
-
-
+                
                 <img src="../../static/find/img/city_title.png" alt="지역구로 찾기"/>
                 <div class="city_choice clearfix">
                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#all" aria-expanded="false" aria-controls="collapseExample">
@@ -89,6 +70,21 @@
                     </button>
                 </div>
             </div>
+
+            {% for hospital in hospitals %}
+                <div id= "results" class="hospital_info clearfix">
+                    <a href="{% url 'Hospital_detail' hospital.id %}">
+                    <div class="hospital_box">
+                        <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
+                        <div class="hospital_text">
+                            <span>{{ hospital.name }}</span>
+                            <p>{{ hospital.address }}</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            {% endfor %}
+
                 <div class="hospital_contents">
                     <div class="collapse" id="all">
                         <div class="card card-body">
