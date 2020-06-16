@@ -7,6 +7,12 @@
 <p>{{hospital.tel}}</p>
 <p>{{hospital.address}}</p>
 
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit"></button>
+</form>
+
 {% for review in hospital.reviews.all %}
 <hr>
     {% if review.score == 5 %}
