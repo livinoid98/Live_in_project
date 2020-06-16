@@ -7,8 +7,9 @@ class Hospital(models.Model):
         (2,'경기,인천'),
         (3,'강원'),
         (4,'충청'),
-        (5,'경상'),
-        (6,'제주'),
+        (5,'전라'),
+        (6,'경상'),
+        (7,'제주'),
     ]
     name = models.CharField(max_length=20)
     zone = models.IntegerField(default=0, choices=ZONE_CATEGORY)
@@ -16,13 +17,13 @@ class Hospital(models.Model):
     site_url = models.URLField()
     address = models.CharField(max_length=200)
     tel = models.CharField(max_length=15)
-    img = models.ImageField(blank=True)
+    img = models.ImageField(blank=True, upload_to='hospital_images/')
 
     def __str__(self):
         return self.name
 
 class Review(models.Model):
-    Hospital_id = models.ForeignKey('Hospital', on_delete=models.CASCADE)
+    Hospital_id = models.ForeignKey('Hospital', on_delete=models.CASCADE, related_name='reviews')
     SCORE = [
         (1, '★☆☆☆☆'),
         (2, '★★☆☆☆'),
