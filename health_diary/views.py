@@ -4,7 +4,7 @@ from .forms import PostForm, CommentForm
 from .models import Post, Comment
 
 def index(request):
-    posts = Post.objects
+    posts = Post.objects.order_by('-pub_date')  # 최신순으로 정렬
     return render(request, 'health_diary/index.html', {'posts': posts})
 
 def postform(request, post=None):

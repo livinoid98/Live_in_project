@@ -1,10 +1,7 @@
+{% extends 'main/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block head %}
 	<link rel="stylesheet" href="{% static 'mypage/layout.css' %}" type="text/css"/>
 	<link rel="stylesheet" href="{% static 'mypage/main.css' %}" type="text/css"/>
 	<link rel="stylesheet" href="{% static 'mypage/day_main.css' %}" type="text/css"/>
@@ -13,54 +10,9 @@
 	<script src="{% static 'mypage/js/interaction_main.js' %}" type="text/javascript" text="javascript"></script>
 	<script src="{% static 'mypage/js/jquery-3.5.0.js' %}" type="text/javascript" text="javascript"></script>
 	<script src="{% static 'mypage/js/diary.js' %}" type="text/javascript" text="javascript"></script>
-	<title>My Page</title>
-	<script>
-		
+	<!-- <title>My Page</title> -->
 
-		document.addEventListener('DOMContentLoaded', function() {
-		  var calendarEl = document.getElementById('calendar');
-			let today = new Date();
-			let year = today.getFullYear();
-			let month = today.getMonth()+1;
-			if(month<10){
-				month = '0'+month;
-			}
-			let date = today.getDate();
-		  
-		  var calendar = new FullCalendar.Calendar(calendarEl, {
-			plugins: [ 'interaction', 'dayGrid' ],
-			defaultDate: `${year}-${month}-${date}`,
-			editable: true,
-			eventLimit: true, // allow "more" link when too many events
-			events: [
-			{
-				  title : '새로운 일정 추가',
-				  start : '2020-05-21',
-					end : '2020-05-22',
-			  },
-			  {
-				  title : '프젝',
-				  start : '2020-05-16',
-				  end : '2020-05-23',
-			  },
-			  {
-				  title : '일정추가2',
-				  start : '2020-05-19',
-				  end : '2020-05-30',
-			  },
-			  {
-				  title : '일정추가3',
-				  start : '2020-05-19',
-				  end : '2020-05-30',
-			  },
-			]
-		  });
-	  
-		  calendar.render();
-		});
-	  
-	  </script>
-	  <style>
+	<style>
 		.calendar{
 			width:1200px;
 			margin:0 auto;
@@ -267,122 +219,144 @@
 		.wrap footer{
 			margin-top:420px;
 		}
-	  </style>
-</head>
-<body>
-    <div class="wrap">
-        <header>
-            <div class="logo">
-                <h1><a href="{% url 'main' %}"><img src="../../static/mypage/img/logo.png" alt=""/></a></h1>
-            </div>
-            <nav class="clearfix">
-                <div class="find">
-                    <img src="../../static/mypage/img/find.png" alt=""/>
-                </div>
-                <ul class="clearfix">
-                    <li><h2><a href="{% url 'find' %}">병원 의사 찾기</a></h2></li>
-                    <li><h2><a href="{% url 'notice' %}">재빈 이해하기</a></h2></li>
-                    <li><h2><a href="{% url 'health_diary' %}">투병 일기</a></h2></li>
-                    <li><h2><a href="{% url 'mypage' %}">마이페이지</a></h2></li>
-                </ul>
-                <div class="time">
-                    <h2><a href="{% url 'mypage' %}">진료시간</a></h2>
-                </div>
-            </nav>
-        </header>
-        <div class="main">
-            <div class="black"></div>
-            <div class="main_wrap">
-                <h3><img src="../../static/mypage/img/main_text.png" alt=""/></h3>
-            </div>
-        </div>
-        <div class="calendar">
-            <div class="calendar_title">
-                <img src="../../static/mypage/img/date_picker.png" alt=""/>
-			</div>
-			<div id='calendar'></div>
-			<div class="gray_back"></div>
-			<div class="white_back"></div>
-			<div class="calendar_add">
-				<div class="add_title">
-					<img src="../../static/mypage/img/add_plan_title.png" alt=""/>
-				</div>
-				<label>시작일</label>
-				<input type="date" value="2020-05-19"/>
-				<label>종료일</label>
-				<input type="date" value="2020-05-19"/>
-				<label>병원 일정</label>
-				<input type="text" placeholder="진료 및 치료내용을 등록하세요."/>
-				<button type="submit">일정등록</button>
-			</div>
+	</style>
+{% endblock head %}
+
+{% block main %}
+	<div class="main">
+		<div class="black"></div>
+		<div class="main_wrap">
+			<h3><img src="../../static/mypage/img/main_text.png" alt=""/></h3>
 		</div>
-		<div class="numeric_diary">
-			<div class="diary_title">
-				<img src="../../static/mypage/img/diary_title.png" alt=""/>	
-			</div>
-			<div class="diary_table">
-				<table>
-					<thead>
-						<tr>
-							<td>날짜</td>
-							<td>백혈구</td>
-							<td>중성구</td>
-							<td>헤모글로빈</td>
-							<td>혈소판</td>
-							<td>이모티콘</td>
-						</tr>
-					</thead>
-					<tbody>
-						<!--
-						<tr>
-							<td>9/21</td>
-							<td>1000</td>
-							<td>-</td>
-							<td>10.6</td>
-							<td>25,000</td>
-							<td>좋아요</td>
-						</tr>
-						-->
-						{% for diary in op_list %}
-						<tr>
-							<td>{{ diary.date }}</td>
-							<td>{{ diary.WBC }}</td>
-							<td>{{ diary.neutrophil }}</td>
-							<td>{{ diary.RBC }}</td>
-							<td>{{ diary.PT }}</td>
-							<td></td>
-						</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			</div>
-			<div class="comment_page">
-				<span>19</span>
-				{% for diary in op_list %}
-				<p>{{ diary.content }}</p>
-				{% endfor %}
-				<img src="../../static/mypage/img/happy.png" alt=""/>
-				<button type="submit">글쓰기</button>
-			</div>
+	</div>
+	<div class="calendar">
+		<div class="calendar_title">
+			<img src="../../static/mypage/img/date_picker.png" alt=""/>
 		</div>
-		<div class="modal_back"></div>
-        <div class="modal">
-			<div class="modal_title">
-				<h3>혈액 수치 입력</h3>
+		<div id='calendar'></div>
+		<div class="gray_back"></div>
+		<div class="white_back"></div>
+		<div class="calendar_add">
+			<div class="add_title">
+				<img src="../../static/mypage/img/add_plan_title.png" alt=""/>
 			</div>
-			<form action="{% url 'add' %}" method="POST">
-				{% csrf_token %}
-				<div class="modal_body">
-					{{ form.as_table }}
-				</div>
-				<button type="submit">등록</button>
-				<button id="close">닫기</button>
-			</form>
-        </div>
-        <footer>
-            <a href="#"><img src="../../static/mypage/img/footer_logo.png" alt=""/></a>
-            <img src="../../static/mypage/img/footer_text.png" alt=""/>
-        </footer>
-    </div>
-</body>
-</html>
+			<label>시작일</label>
+			<input type="date" value="2020-05-19"/>
+			<label>종료일</label>
+			<input type="date" value="2020-05-19"/>
+			<label>병원 일정</label>
+			<input type="text" placeholder="진료 및 치료내용을 등록하세요."/>
+			<button type="submit">일정등록</button>
+		</div>
+	</div>
+	<div class="numeric_diary">
+		<div class="diary_title">
+			<img src="../../static/mypage/img/diary_title.png" alt=""/>	
+		</div>
+		<div class="diary_table">
+			<table>
+				<thead>
+					<tr>
+						<td>날짜</td>
+						<td>백혈구</td>
+						<td>중성구</td>
+						<td>헤모글로빈</td>
+						<td>혈소판</td>
+						<td>이모티콘</td>
+					</tr>
+				</thead>
+				<tbody>
+					<!--
+					<tr>
+						<td>9/21</td>
+						<td>1000</td>
+						<td>-</td>
+						<td>10.6</td>
+						<td>25,000</td>
+						<td>좋아요</td>
+					</tr>
+					-->
+					{% for diary in op_list %}
+					<tr>
+						<td>{{ diary.date }}</td>
+						<td>{{ diary.WBC }}</td>
+						<td>{{ diary.neutrophil }}</td>
+						<td>{{ diary.RBC }}</td>
+						<td>{{ diary.PT }}</td>
+						<td></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<div class="comment_page">
+			<span>19</span>
+			{% for diary in op_list %}
+			<p>{{ diary.content }}</p>
+			{% endfor %}
+			<img src="../../static/mypage/img/happy.png" alt=""/>
+			<button type="submit">글쓰기</button>
+		</div>
+	</div>
+	<div class="modal_back"></div>
+	<div class="modal">
+		<div class="modal_title">
+			<h3>혈액 수치 입력</h3>
+		</div>
+		<form action="{% url 'add' %}" method="POST">
+			{% csrf_token %}
+			<div class="modal_body">
+				{{ form.as_table }}
+			</div>
+			<button type="submit">등록</button>
+			<button id="close">닫기</button>
+		</form>
+	</div>
+{% endblock main %}
+
+{% block js %}
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		var calendarEl = document.getElementById('calendar');
+			let today = new Date();
+			let year = today.getFullYear();
+			let month = today.getMonth()+1;
+			if(month<10){
+				month = '0'+month;
+			}
+			let date = today.getDate();
+		
+		var calendar = new FullCalendar.Calendar(calendarEl, {
+			plugins: [ 'interaction', 'dayGrid' ],
+			defaultDate: `${year}-${month}-${date}`,
+			editable: true,
+			eventLimit: true, // allow "more" link when too many events
+			events: [
+			{
+				title : '새로운 일정 추가',
+				start : '2020-05-21',
+					end : '2020-05-22',
+			},
+			{
+				title : '프젝',
+				start : '2020-05-16',
+				end : '2020-05-23',
+			},
+			{
+				title : '일정추가2',
+				start : '2020-05-19',
+				end : '2020-05-30',
+			},
+			{
+				title : '일정추가3',
+				start : '2020-05-19',
+				end : '2020-05-30',
+			},
+			]
+		});
+	
+		calendar.render();
+		});
+	
+	</script>
+{% endblock js %}
