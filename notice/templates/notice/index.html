@@ -1,200 +1,162 @@
-{% load  static %}
+{% extends 'main/base.html' %}
+{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'notice/layout.css' %}" type="text/css"/>
-    <title>Notice Page</title>
-</head>
-<body>
-    <div class="wrap">
-        <header>
-            <div class="logo">
-                <h1><a href="{% url 'main' %}"><img src="../../static/notice/img/logo.png" alt=""/></a></h1>
-            </div>
-            <nav class="clearfix">
-                <div class="find">
-                    <img src="../../static/notice/img/find.png" alt=""/>
-                </div>
-                <ul class="clearfix">
-                    <li><h2><a href="{% url 'find' %}">병원 의사 찾기</a></h2></li>
-                    <li><h2><a href="{% url 'notice' %}">재빈 이해하기</a></h2></li>
-                    <li><h2><a href="{% url 'health_diary' %}">투병 일기</a></h2></li>
-                    <li><h2><a href="{% url 'mypage' %}">마이페이지</a></h2></li>
-                </ul>
-                <div class="time">
-                    <h2><a href="{% url 'mypage' %}">진료시간</a></h2>
-                </div>
-            </nav>
-        </header>
-        <div class="main">
-            <div class="black"></div>
-            <div class="main_wrap">
-                <h3><img src="../../static/notice/img/main_text.png" alt=""/></h3>
-            </div>
-        </div>
-        <div class="doctor_notice clearfix">
-            <h3>의사 칼럼 모음</h3>
-            <ul class="sub clearfix">
-                <li>전문 의사 작성</li>
-                <li>칼럼 모음</li>
-            </ul>
-            <button><a href="{% url 'new_pro' %}">글쓰기</a></button>
-            <div class="column_box clearfix">
-                {% for board in boards.all %}
-                {% if board.pro == True %}
-                <div class="column">
-                    <a href="{% url 'detail' board.id %}"><img src="../../static/notice/img/column1.jpg" alt=""/></a>
-                    <div class="column_text">
-                        <ul>
-                            <li>{{ board.title }}</li>
-                            <!-- 전문가이름 -->
-                            <li>재빈닥터</li>
-                            <!-- <li>{{ board.User_id.name }}</li> -->
-                        </ul>
-                        <!-- 생성날짜 -->
-                        <br><br>
-                        <span>{{ board.pub_date }}</span>
-                    </div>
-                </div>
-                {% endif %}
-                {% endfor %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'notice/layout.css' %}" type="text/css" />
+{% endblock head %}
 
-                <div class="column">
-                    <img src="../../static/notice/img/column2.png" alt=""/>
-                    <div class="column_text">
-                        <ul>
-                            <li>제대혈이식에 관한 올바른 이해</li>
-                            <li>재빈닥터</li>
-                        </ul>
-                        <span>07.07.09</span>
-                    </div>
-                </div>
-                <div class="column">
-                    <img src="../../static/notice/img/column3.png" alt=""/>
-                    <div class="column_text">
-                        <ul>
-                            <li>재생불량성 빈혈에서의 T세포 제거</li>
-                            <li>재빈닥터</li>
-                        </ul>
-                        <span>05.11.22</span>
-                    </div>
-                </div>
-                <div class="column">
-                    <img src="../../static/notice/img/column4.jpg" alt=""/>
-                    <div class="column_text">
-                        <ul>
-                            <li>조혈모세포이식 과 골수이식종류</li>
-                            <li>재빈닥터</li>
-                        </ul>
-                        <span>04.01.21</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="food_notice clearfix">
-            <h3>재빈이야기 자유게시판</h3>
-            <form>
-                <input type="text" name="search" placeholder="Search"/>
-                <button><a href="#"><img src="../../static/notice/img/search_icon.png" alt=""/></a></button>
-            </form>
-            <table>
-                <thead>
-                    <tr>
-                        <td>번호</td>
-                        <td>제목</td>
-                        <td>작성자</td>
-                        <td>작성일</td>
-                        <!-- <td>조회수</td> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- DB에 있는 게시글 불러오기 -->
-                    {% for board in boards.all %}
-                    {% if board.pro == False %}
-                    <tr>
-                        <td>{{ board.id }}</td>
-                        <td><a href="{% url 'detail' board.id %}">{{ board.title }}</a></td>
-                        <!-- 작성자는 로그인기능 구현이후에.. -->
-                        <td>작성자</td>
-                        <!-- <td>{{ board.User_id.name }}</td> -->
-                        <td>{{ board.pub_date }}</td>
-                    </tr>
-                    {% endif %}
-                    {% endfor %}
-                    <tr>
-                        <td>9</td>
-                        <td>면역 치료 후 첫 외래</td>
-                        <td>갸르미</td>
-                        <td>20.04.13</td>
-                        <td>182</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>이식 +19 골수검사 퇴원이야기</td>
-                        <td>유니혀니맘</td>
-                        <td>20.04.13</td>
-                        <td>219</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>무균실 탈출...</td>
-                        <td>빼짱</td>
-                        <td>20.04.11</td>
-                        <td>214</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>이식이후 백일</td>
-                        <td>skyhyun</td>
-                        <td>20.04.10</td>
-                        <td>276</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>이식 14일째 드디어 꿈틀 간정맥폐쇄증 의심</td>
-                        <td>유니혀니맘</td>
-                        <td>20.04.08</td>
-                        <td>297</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>atg 어제부로 끝났네요.</td>
-                        <td>갸르미</td>
-                        <td>20.04.07</td>
-                        <td>193</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>4월 1일 이식합니다.</td>
-                        <td>빼짱</td>
-                        <td>20.03.28</td>
-                        <td>301</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>일년만에 들어왔네요. 반일치이식 4년차</td>
-                        <td>안녕</td>
-                        <td>20.03.19</td>
-                        <td>403</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>딸아이 전처치 2일차 지났어요</td>
-                        <td>유니혀니맘</td>
-                        <td>20.03.17</td>
-                        <td>330</td>
-                    </tr>
-                </tbody>
-            </table>
-            <button><a href="{% url 'new' %}">글쓰기</a></button>
-        </div>
-        <footer>
-            <a href="{% url 'main' %}"><img src="../../static/notice/img/footer_logo.png" alt=""/></a>
-            <img src="../../static/notice/img/footer_text.png" alt=""/>
-        </footer>
+{% block main %}
+<div class="main">
+    <div class="black"></div>
+    <div class="main_wrap">
+        <h3><img src="../../static/notice/img/main_text.png" alt="" /></h3>
     </div>
-</body>
-</html>
+</div>
+<div class="doctor_notice clearfix">
+    <h3>의사 칼럼 모음</h3>
+    <ul class="sub clearfix">
+        <li>전문 의사 작성</li>
+        <li>칼럼 모음</li>
+    </ul>
+    <button><a href="{% url 'new_pro' %}">글쓰기</a></button>
+    <div class="column_box clearfix">
+        {% for board in boards.all %}
+        {% if board.pro == True %}
+        <div class="column">
+            <a href="{% url 'detail' board.id %}"><img src="../../static/notice/img/column1.jpg" alt="" /></a>
+            <div class="column_text">
+                <ul>
+                    <li>{{ board.title }}</li>
+                    <!-- 전문가이름 -->
+                    <li>재빈닥터</li>
+                    <!-- <li>{{ board.User_id.name }}</li> -->
+                </ul>
+                <!-- 생성날짜 -->
+                <br><br>
+                <span>{{ board.pub_date }}</span>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        <div class="column">
+            <img src="../../static/notice/img/column2.png" alt="" />
+            <div class="column_text">
+                <ul>
+                    <li>제대혈이식에 관한 올바른 이해</li>
+                    <li>재빈닥터</li>
+                </ul>
+                <span>07.07.09</span>
+            </div>
+        </div>
+        <div class="column">
+            <img src="../../static/notice/img/column3.png" alt="" />
+            <div class="column_text">
+                <ul>
+                    <li>재생불량성 빈혈에서의 T세포 제거</li>
+                    <li>재빈닥터</li>
+                </ul>
+                <span>05.11.22</span>
+            </div>
+        </div>
+        <div class="column">
+            <img src="../../static/notice/img/column4.jpg" alt="" />
+            <div class="column_text">
+                <ul>
+                    <li>조혈모세포이식 과 골수이식종류</li>
+                    <li>재빈닥터</li>
+                </ul>
+                <span>04.01.21</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="food_notice clearfix">
+    <h3>재빈이야기 자유게시판</h3>
+    <form>
+        <input type="text" name="search" placeholder="Search" />
+        <button><a href="#"><img src="../../static/notice/img/search_icon.png" alt="" /></a></button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>번호</td>
+                <td>제목</td>
+                <td>작성자</td>
+                <td>작성일</td>
+                <!-- <td>조회수</td> -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- DB에 있는 게시글 불러오기 -->
+            {% for board in boards.all %}
+            {% if board.pro == False %}
+            <tr>
+                <td>{{ board.id }}</td>
+                <td><a href="{% url 'detail' board.id %}">{{ board.title }}</a></td>
+                <!-- 작성자는 로그인기능 구현이후에.. -->
+                <td>작성자</td>
+                <!-- <td>{{ board.User_id.name }}</td> -->
+                <td>{{ board.pub_date }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            <tr>
+                <td>9</td>
+                <td>면역 치료 후 첫 외래</td>
+                <td>갸르미</td>
+                <td>20.04.13</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>이식 +19 골수검사 퇴원이야기</td>
+                <td>유니혀니맘</td>
+                <td>20.04.13</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>무균실 탈출...</td>
+                <td>빼짱</td>
+                <td>20.04.11</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>이식이후 백일</td>
+                <td>skyhyun</td>
+                <td>20.04.10</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>이식 14일째 드디어 꿈틀 간정맥폐쇄증 의심</td>
+                <td>유니혀니맘</td>
+                <td>20.04.08</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>atg 어제부로 끝났네요.</td>
+                <td>갸르미</td>
+                <td>20.04.07</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4월 1일 이식합니다.</td>
+                <td>빼짱</td>
+                <td>20.03.28</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>일년만에 들어왔네요. 반일치이식 4년차</td>
+                <td>안녕</td>
+                <td>20.03.19</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>딸아이 전처치 2일차 지났어요</td>
+                <td>유니혀니맘</td>
+                <td>20.03.17</td>
+            </tr>
+        </tbody>
+    </table>
+    <button><a href="{% url 'new' %}">글쓰기</a></button>
+</div>
+{% endblock main %}

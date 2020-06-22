@@ -6,7 +6,7 @@ from .forms import BoardForm, CommentForm
 from .models import Board, Comment
 
 def index(request):
-    boards = Board.objects
+    boards = Board.objects.order_by('-pub_date')    # 최신순으로 정렬
     return render(request, 'notice/index.html', {'boards': boards})
 
 def boardform(request, board=None):
