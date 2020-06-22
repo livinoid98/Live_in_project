@@ -1,12 +1,12 @@
 from django import forms
-from .models import Post, Comment
+from django.forms import TextInput, Textarea
+from .models import Post
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['title', 'content']
-
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ['content']
+        widgets = {
+            'title': TextInput(attrs={'class':'floatLabel', 'placeholder':'Title'}),
+            'content' : Textarea(attrs={'class':'floatLabel', 'placeholder':'Content'}),
+        }
