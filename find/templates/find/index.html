@@ -86,20 +86,6 @@
             </div>
         </div>
 
-        {% for hospital in hospitals %}
-            <div id= "results" class="hospital_info clearfix">
-                <a href="{% url 'Hospital_detail' hospital.id %}">
-                <div class="hospital_box">
-                    <img src="{{ hospital.img.url }}" height="300" width="300" alt="병원이미지">
-                    <div class="hospital_text">
-                        <span>{{ hospital.name }}</span>
-                        <p>{{ hospital.address }}</p>
-                    </div>
-                </div>
-                </a>
-            </div>
-        {% endfor %}
-
             <div class="hospital_contents">
                 <div class="collapse" id="all">
                     <div class="card card-body">

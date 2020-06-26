@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  color: #4b4b4b;
+  font-weight: 600; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font: inherit; }
+
+button {
+  color: inherit;
+  font: inherit; }
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.find, ul, .time {
+  float: left; }
+
+.wrap {
+  width: 100%; }
+  .wrap header {
+    width: 1200px;
+    margin: 0 auto; }
+    .wrap header .logo {
+      width: 197px;
+      margin: 0 auto; }
+      .wrap header .logo img {
+        width: 100%;
+        margin-top: 50px; }
+    .wrap header nav {
+      width: 662px;
+      margin: 0 auto;
+      margin-top: 40px; }
+      .wrap header nav .find {
+        width: 50px;
+        height: 50px;
+        background-color: #2cacdb;
+        cursor: pointer; }
+        .wrap header nav .find img {
+          margin-top: 10px;
+          margin-left: 10px; }
+      .wrap header nav ul {
+        width: 510px;
+        height: 48px;
+        background-color: #fff;
+        border: 1px solid #f9f9f9; }
+        .wrap header nav ul li {
+          width: 100px;
+          margin-left: 20px;
+          margin-top: 15px;
+          float: left; }
+          .wrap header nav ul li:nth-child(1) {
+            width: 110px;
+            margin-left: 40px; }
+          .wrap header nav ul li:nth-child(2) {
+            width: 110px; }
+          .wrap header nav ul li:nth-child(3) {
+            width: 80px; }
+          .wrap header nav ul li:nth-child(4) {
+            width: 100px; }
+      .wrap header nav .time {
+        width: 100px;
+        height: 50px;
+        background-color: #2cacdb; }
+        .wrap header nav .time h2 {
+          margin-left: 22px;
+          margin-top: 16px;
+          color: #fff; }
+  .wrap .main {
+    width: 100%;
+    height: 330px;
+    background-image: url("../../static/notice/img/main_img.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -18px; }
+    .wrap .main .black {
+      width: 1406px;
+      height: 330px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.2); }
+    .wrap .main .main_wrap {
+      width: 1200px;
+      margin: 0 auto;
+      margin-top: -330px; }
+      .wrap .main .main_wrap h3 {
+        margin-top: 118px;
+        margin-left: 420px; }
+  .wrap .doctor_notice {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 60px; }
+    .wrap .doctor_notice h3, .wrap .doctor_notice .sub {
+      float: left; }
+    .wrap .doctor_notice h3 {
+      font-size: 18px;
+      font-weight: 900;
+      color: #393939;
+      margin-left: 20px;
+      letter-spacing: 2px; }
+    .wrap .doctor_notice ul li {
+      float: left;
+      font-size: 12px;
+      font-weight: 700;
+      color: #707070;
+      margin-left: 20px;
+      margin-top: 4px; }
+    .wrap .doctor_notice button {
+      width: 120px;
+      height: 34px;
+      border: 2px solid #b4b4b4;
+      background-color: #fff;
+      position: relative;
+      top: -22px;
+      margin-left: 916px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #5e5e5e;
+      cursor:pointer; }
+    .wrap .doctor_notice .column_box {
+      width: 100%; }
+      .wrap .doctor_notice .column_box .column {
+        width: 285px;
+        margin-left: 20px;
+        float: left; }
+        .wrap .doctor_notice .column_box .column:nth-child(1) {
+          margin-left: 0px; }
+        .wrap .doctor_notice .column_box .column img {
+          width: 100%;
+          cursor:pointer; }
+          .wrap .doctor_notice .column_box .column .column_text li {
+            margin-top: 16px;
+            margin-left: 0px;
+            cursor:pointer; }
+            .wrap .doctor_notice .column_box .column .column_text li:nth-child(1) {
+              font-size: 14px;
+              color: #6f6f6f;
+              margin-left: 10px; }
+            .wrap .doctor_notice .column_box .column .column_text li:nth-child(2) {
+              font-size: 10px;
+              margin-top: 22px;
+              margin-left: 10px;
+              color: #d6d6d6; }
+          .wrap .doctor_notice .column_box .column .column_text span {
+            font-size: 12px;
+            position: relative;
+            top: 6px;
+            margin-left: 16px;
+            color: #a1a1a1;
+            cursor:pointer; }
+  .wrap .food_notice {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 70px; }
+    .wrap .food_notice h3 {
+      font-size: 16px;
+      font-weight: 900;
+      color: #2cacdb;
+      margin-left: 68px; }
+    .wrap .food_notice form {
+      float: right;
+      margin-top: -21px;
+      margin-right: 50px;
+      position: relative; }
+      .wrap .food_notice form input {
+        width: 300px;
+        height: 35px;
+        background-color: #fff;
+        border: 1px solid #dedede;
+        border-radius: 15px; }
+        .wrap .food_notice form input::-webkit-input-placeholder {
+          font-size: 14px;
+          font-weight: 400px;
+          color: #ccc;
+          padding-left: 18px; }
+        .wrap .food_notice form input:-ms-input-placeholder {
+          font-size: 14px;
+          font-weight: 400px;
+          color: #ccc;
+          padding-left: 18px; }
+        .wrap .food_notice form input::-ms-input-placeholder {
+          font-size: 14px;
+          font-weight: 400px;
+          color: #ccc;
+          padding-left: 18px; }
+        .wrap .food_notice form input::placeholder {
+          font-size: 14px;
+          font-weight: 400px;
+          color: #ccc;
+          padding-left: 18px; }
+      .wrap .food_notice form button {
+        width: 64px;
+        height: 35px;
+        margin-top: 0px;
+        position: absolute;
+        top: 1px;
+        left: 236px;
+        border: none;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        cursor: pointer; }
+    .wrap .food_notice table {
+      width: 1100px;
+      margin: 0 auto;
+      margin-top: 29px;
+      border-top: 2px solid #2cacdb; }
+      .wrap .food_notice table thead tr {
+        height: 55px; }
+        .wrap .food_notice table thead tr td {
+          font-size: 18px;
+          font-weight: 400;
+          color: #5c5e5e;
+          text-align: center;
+          padding: 20px 0px; }
+          .wrap .food_notice table thead tr td:nth-child(1) {
+            width: 94px; }
+          .wrap .food_notice table thead tr td:nth-child(2) {
+            width: 500px; }
+          .wrap .food_notice table thead tr td:nth-child(3) {
+            width: 148px; }
+          .wrap .food_notice table thead tr td:nth-child(4) {
+            width: 148px; }
+          .wrap .food_notice table thead tr td:nth-child(5) {
+            width: 98px; }
+      .wrap .food_notice table tbody tr {
+        height: 46px;
+        border-top: 1px solid #edf0f3; }
+        .wrap .food_notice table tbody tr:nth-child(1) {
+          border-top: 1px solid #a4dff5; }
+        .wrap .food_notice table tbody tr td {
+          font-size: 14px;
+          font-weight: 400;
+          color: #929292;
+          text-align: center;
+          padding: 20px 0px;
+          cursor: pointer; }
+          .wrap .food_notice table tbody tr td:nth-child(1) {
+            width: 94px; }
+          .wrap .food_notice table tbody tr td:nth-child(2) {
+            width: 500px; }
+          .wrap .food_notice table tbody tr td:nth-child(3) {
+            width: 148px; }
+          .wrap .food_notice table tbody tr td:nth-child(4) {
+            width: 148px; }
+          .wrap .food_notice table tbody tr td:nth-child(5) {
+            width: 98px; }
+    .wrap .food_notice button {
+      width: 100px;
+      height: 35px;
+      background-color: #fff;
+      border: 1px solid #6d6d6d;
+      border-radius: 15px;
+      float: right;
+      margin-top: 44px;
+      margin-right: 51px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 400;
+      color: #777; }
+  .wrap footer {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 82px;
+    margin-bottom: 40px; }
+    .wrap footer img:nth-child(1) {
+      margin-left: 66px; }
+    .wrap footer img:nth-child(2) {
+      margin-top: -18px;
+      margin-left: 60px; }

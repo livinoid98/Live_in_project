@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700,900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  color: #4b4b4b;
+  font-weight: 600; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.find, ul, .time {
+  float: left; }
+
+.wrap {
+  width: 100%; }
+  .wrap header {
+    width: 1200px;
+    margin: 0 auto; }
+    .wrap header .logo {
+      width: 197px;
+      margin: 0 auto; }
+      .wrap header .logo img {
+        width: 100%;
+        margin-top: 50px; }
+    .wrap header nav {
+      width: 662px;
+      margin: 0 auto;
+      margin-top: 40px; }
+      .wrap header nav .find {
+        width: 50px;
+        height: 50px;
+        background-color: #2cacdb;
+        cursor: pointer; }
+        .wrap header nav .find img {
+          margin-top: 10px;
+          margin-left: 10px; }
+      .wrap header nav ul {
+        width: 510px;
+        height: 48px;
+        background-color: #fff;
+        border: 1px solid #f9f9f9; }
+        .wrap header nav ul li {
+          width: 100px;
+          margin-left: 20px;
+          margin-top: 15px;
+          float: left; }
+          .wrap header nav ul li:nth-child(1) {
+            width: 110px;
+            margin-left: 40px; }
+          .wrap header nav ul li:nth-child(2) {
+            width: 110px; }
+          .wrap header nav ul li:nth-child(3) {
+            width: 80px; }
+          .wrap header nav ul li:nth-child(4) {
+            width: 100px; }
+      .wrap header nav .time {
+        width: 100px;
+        height: 50px;
+        background-color: #2cacdb; }
+        .wrap header nav .time h2 {
+          margin-left: 22px;
+          margin-top: 16px;
+          color: #fff; }
+  .wrap .search {
+    width: 100%;
+    height: 676px;
+    background-image: url("../../static/find/img/search_main_img.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: -20px;
+    z-index: -1; }
+    .wrap .search .black {
+      width: 100%;
+      height: 676px;
+      background-color: #7a7a7a;
+      opacity: 0.2; }
+    .wrap .search .search_wrap {
+      width: 1200px;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      margin-left: -600px; }
+      .wrap .search .search_wrap h3 {
+        margin-top: 108px;
+        margin-left: 115px; }
+      .wrap .search .search_wrap form {
+        margin-top: 33px;
+        margin-left: 111px;
+        display: inline-block; }
+        .wrap .search .search_wrap form input {
+          width: 800px;
+          height: 80px;
+          border: none;
+          font-size: 22px;
+          font-weight: 400;
+          color: #c4c4c4;
+          padding-left: 31px; }
+    .wrap .search button {
+      width: 180px;
+      height: 80px;
+      background-color: #2cacdb;
+      border: none;
+      margin-left: 19px;
+      position: relative;
+      cursor: pointer; }
+      .wrap .search button img {
+        position: absolute;
+        top: 25px;
+        left: 29px; }
+      .wrap .search button label {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        margin-left: 28px; }
+    .wrap .search img:nth-child(4) {
+      display: block;
+      margin-top: 35px;
+      margin-left: 115px; }
+    .wrap .search .city_choice {
+      margin-top: 26px;
+      margin-left: 115px; }
+      .wrap .search .city_choice .city_box {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        float: left;
+        margin-left: 10px;
+        cursor: pointer; }
+        .wrap .search .city_choice .city_box:nth-child(1) {
+          margin-left: 0px; }
+        .wrap .search .city_choice .city_box span {
+          font-size: 12px;
+          font-weight: 400;
+          color: #181818; }
+  .wrap .hospital_contents {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: -115px; }
+    .wrap .hospital_contents h3 {
+      padding-top: 57px;
+      margin-left: 87px; }
+    .wrap .hospital_contents .hospital_info {
+      margin-top: 50px;
+      cursor: pointer; }
+      .wrap .hospital_contents .hospital_info .hospital_box {
+        float: left;
+        margin-left: 23px; }
+        .wrap .hospital_contents .hospital_info .hospital_box:nth-child(1) {
+          margin-left: 68px; }
+        .wrap .hospital_contents .hospital_info .hospital_box img {
+          height: 222px; }
+        .wrap .hospital_contents .hospital_info .hospital_box .hospital_text {
+          width: 320px;
+          margin-top: 36px;
+          text-align: center; }
+          .wrap .hospital_contents .hospital_info .hospital_box .hospital_text span {
+            font-size: 18px;
+            font-weight: 500;
+            color: #4e4e4e; }
+          .wrap .hospital_contents .hospital_info .hospital_box .hospital_text p {
+            font-size: 12px;
+            font-weight: 400;
+            color: #d7d7d7;
+            margin-top: 16px;
+            line-height: 18px; }
+  .wrap footer {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 64px;
+    margin-bottom: 40px; }
+    .wrap footer img:nth-child(1) {
+      margin-left: 66px;
+      cursor: pointer; }
+    .wrap footer img:nth-child(2) {
+      margin-top: -18px;
+      margin-left: 60px; }
